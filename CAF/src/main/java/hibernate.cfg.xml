@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration> 
+ 	<session-factory >
+  		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+  		<property name="hibernate.connection.password">Bazinga!</property>
+ 		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/caf_db</property>
+		<!-- <property name="hibernate.connection.url">jdbc:mysql://212.237.23.231:3306/eci_db</property> -->
+  		<property name="hibernate.connection.username">root</property>
+  		<property name="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
+  		<property name="hibernate.hbm2ddl.auto">update</property> 
+  
+  
+  		<mapping class="UtenteDTO" package="it.CAF.DTO" resource="it/CAF/hbm/UtenteDTO.hbm.xml"/>
+  		<mapping class="AnagraficaDTO" package="it.CAF.DTO" resource="it/CAF/hbm/AnagraficaDTO.hbm.xml"/>
+  		<mapping class="TipoDocumentoIdentitaDTO" package="it.CAF.DTO" resource="it/CAF/hbm/TipoDocumentoIdentitaDTO.hbm.xml"/>
+  		<mapping class="DocumentoIdentitaDTO" package="it.CAF.DTO" resource="it/CAF/hbm/DocumentoIdentitaDTO.hbm.xml"/>
+  		<mapping class="ModuloDTO" package="it.CAF.DTO" resource="it/CAF/hbm/ModuloDTO.hbm.xml"/>
+  		<mapping class="TipoPraticaDTO" package="it.CAF.DTO" resource="it/CAF/hbm/TipoPraticaDTO.hbm.xml"/>
+  		<mapping class="PraticaDTO" package="it.CAF.DTO" resource="it/CAF/hbm/PraticaDTO.hbm.xml"/>
+  		<mapping class="TemplateDTO" package="it.CAF.DTO" resource="it/CAF/hbm/TemplateDTO.hbm.xml"/>
+  		<mapping class="EmailDTO" package="it.CAF.DTO" resource="it/CAF/hbm/EmailDTO.hbm.xml"/>
+  		<mapping class="EmailConfigDTO" package="it.CAF.DTO" resource="it/CAF/hbm/EmailConfigDTO.hbm.xml"/>
+  		<mapping class="AllegatoDTO" package="it.CAF.DTO" resource="it/CAF/hbm/AllegatoDTO.hbm.xml"/>
+  		
+ 	</session-factory>
+</hibernate-configuration>

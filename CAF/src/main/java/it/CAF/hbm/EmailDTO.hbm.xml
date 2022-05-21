@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15-feb-2017 11.20.27 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="it.CAF.DTO.EmailDTO" table="email">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="increment" />
+        </id>
+        <property name="destinatario" type="java.lang.String">
+            <column name="destinatario" />
+            
+        </property>
+  <property name="oggetto" type="java.lang.String">
+            <column name="oggetto" />
+        </property>
+      
+        <property name="messaggio" type="java.lang.String">
+            <column name="messaggio" />
+        </property>
+         <property name="idPratica" type="int">
+            <column name="id_pratica" />
+        </property>
+        
+          <property name="dataInvio" type="java.sql.Date">
+            <column name="data_invio" />
+        </property>
+
+        
+    </class>
+</hibernate-mapping>

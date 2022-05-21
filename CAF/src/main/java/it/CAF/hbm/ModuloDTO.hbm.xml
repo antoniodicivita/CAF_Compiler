@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15-feb-2017 11.20.27 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="it.CAF.DTO.ModuloDTO" table="modulo">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="increment" />
+        </id>
+        <property name="descrizione" type="java.lang.String">
+            <column name="descrizione" />
+        </property>
+ 
+      
+        <property name="note" type="java.lang.String">
+            <column name="note" />
+        </property>
+         <property name="nomeFile" type="java.lang.String">
+            <column name="nome_file" />
+        </property>
+        <property name="disabilitato" type="int">
+            <column name="disabilitato" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

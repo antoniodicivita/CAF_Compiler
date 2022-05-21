@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15-feb-2017 11.20.27 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="it.CAF.DTO.PraticaDTO" table="pratica">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="increment" />
+        </id>
+        <property name="note" type="java.lang.String">
+            <column name="note" />
+        </property>
+    
+       <many-to-one name="anagrafica" class="it.CAF.DTO.AnagraficaDTO" fetch="join" lazy="false">
+            <column name="id_anagrafica" />
+        </many-to-one>
+        
+        <many-to-one name="tipo" class="it.CAF.DTO.TipoPraticaDTO" fetch="join" lazy="false">
+            <column name="id_tipo_pratica" />
+        </many-to-one>
+        
+        <many-to-one name="template" class="it.CAF.DTO.TemplateDTO" fetch="join" lazy="false">
+            <column name="id_template" />
+        </many-to-one>
+        
+        <property name="disabilitato" type="int">
+            <column name="disabilitato" />
+        </property>
+        
+        <property name="dataCreazione" type="java.sql.Date">
+            <column name="data_creazione" />
+        </property>
+        
+        <property name="nomeFile" type="java.lang.String">
+            <column name="nome_file" />
+        </property>
+        
+        <property name="nomeFileScansione" type="java.lang.String">
+            <column name="nome_file_scansione" />
+        </property>
+        
+<!--          <set name="listaModuli" table="pratica_modulo"
+        	inverse="false" lazy="false" fetch="select" cascade="all" >
+            <key>
+                <column name="id_anagrafica" not-null="true" />
+            </key>
+            <many-to-many entity-name="it.portaleSTI.DTO.ModuloDTO">
+                <column name="id_modulo" not-null="true" />
+            </many-to-many>
+        </set> -->
+    </class>
+</hibernate-mapping>
