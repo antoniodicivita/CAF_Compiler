@@ -104,6 +104,7 @@ public class GestioneModuli extends HttpServlet {
 				
 				ajax = true;
 				
+				
 				response.setContentType("application/json");
 				 
 			  	List<FileItem> items = null;
