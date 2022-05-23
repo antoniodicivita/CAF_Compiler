@@ -3,7 +3,7 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <link id="metalinkicon" rel="icon" type="image/x-icon" href="images/favico.ico" >
+  <link id="metalinkicon" rel="icon" type="image/x-icon" href="images/icona.png" >
  
  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
  
