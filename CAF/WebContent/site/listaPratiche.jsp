@@ -73,7 +73,7 @@
 <th>Data Creazione</th>
 <th>Note</th>
 
-<th>Azioni</th>
+<th style="min-width:320px">Azioni</th>
  </tr></thead>
  
  <tbody>
@@ -1315,11 +1315,20 @@ $('#modificaPraticaForm').on('submit', function(e){
 	    		var html = '<ul class="list-group list-group-bordered">';
 	    		if(lista_allegati.length>0){
 	    			for(var i= 0; i<lista_allegati.length;i++){
-	       			 html= html + '<li class="list-group-item"><div class="row"><div class="col-xs-10"><b>'+lista_allegati[i].nomeFile+'</b></div><div class="col-xs-2 pull-right">' 	           
-	                +'<a class="btn btn-danger btn-xs pull-right" onClick="eliminaAllegatoModal(\''+lista_allegati[i].id+'\')"><i class="fa fa-trash"></i></a>'
-	    	           +'<a target="_blank" class="btn btn-danger btn-xs  pull-right"style="margin-right:5px" href="gestionePratiche.do?action=download_allegato&id_allegato='+lista_allegati[i].id+'"><i class="fa fa-arrow-down small"></i></a>'
-	    	           +'</div></div></li>';
-	       		}
+	    				
+	    			
+	    				if(lista_allegati[i].nomeFile.endsWith(".pdf")|| lista_allegati[i].nomeFile.endsWith(".PDF")){
+	    					html= html + '<li class="list-group-item"><div class="row"><div class="col-xs-10"><b>'+lista_allegati[i].nomeFile+'</b></div><div class="col-xs-2 pull-right">' 	           
+			                +'<a class="btn btn-danger btn-xs pull-right" onClick="eliminaAllegatoModal(\''+lista_allegati[i].id+'\')"><i class="fa fa-trash"></i></a>'
+			    	           +'<a target="_blank" class="btn btn-danger btn-xs  pull-right"style="margin-right:5px" href="gestionePratiche.do?action=download_allegato&id_allegato='+lista_allegati[i].id+'"><i class="fa fa-arrow-down small"></i></a>'
+			    	           +'</div></div></li>';
+	    				}else{
+	    					html= html + '<li class="list-group-item"><div class="row"><div class="col-xs-10"><b>'+lista_allegati[i].nomeFile+'</b></div><div class="col-xs-2 pull-right">' 	           
+			                +'<a class="btn btn-danger btn-xs pull-right" onClick="eliminaAllegatoModal(\''+lista_allegati[i].id+'\')"><i class="fa fa-trash"></i></a>'
+			    	           +'<a class="btn btn-danger btn-xs  pull-right"style="margin-right:5px" href="gestionePratiche.do?action=download_allegato&id_allegato='+lista_allegati[i].id+'"><i class="fa fa-arrow-down small"></i></a>'
+			    	           +'</div></div></li>';
+	    				}
+	    			}
 	    		}else{
 	    			 html= html + '<li class="list-group-item"> Nessun file allegato alla pratica! </li>';
 	    		}
@@ -1399,10 +1408,17 @@ $('#modificaPraticaForm').on('submit', function(e){
 	    				    		var html = '<ul class="list-group list-group-bordered">';
 	    				    		if(lista_allegati.length>0){
 	    				    			for(var i= 0; i<lista_allegati.length;i++){
-	    				       			 html= html + '<li class="list-group-item"><div class="row"><div class="col-xs-10"><b>'+lista_allegati[i].nomeFile+'</b></div><div class="col-xs-2 pull-right">' 	           
-	    				                +'<a class="btn btn-danger btn-xs pull-right" onClick="eliminaAllegatoModal(\''+lista_allegati[i].id+'\')"><i class="fa fa-trash"></i></a>'
-	    				    	           +'<a target="_blank" class="btn btn-danger btn-xs  pull-right"style="margin-right:5px" href="gestionePratiche.do?action=download_allegato&id_allegato='+lista_allegati[i].id+'"><i class="fa fa-arrow-down small"></i></a>'
-	    				    	           +'</div></div></li>';
+	    				    				if(lista_allegati[i].nomeFile.endsWith(".pdf")|| lista_allegati[i].nomeFile.endsWith(".PDF")){
+	    				    					html= html + '<li class="list-group-item"><div class="row"><div class="col-xs-10"><b>'+lista_allegati[i].nomeFile+'</b></div><div class="col-xs-2 pull-right">' 	           
+	    	    				                +'<a class="btn btn-danger btn-xs pull-right" onClick="eliminaAllegatoModal(\''+lista_allegati[i].id+'\')"><i class="fa fa-trash"></i></a>'
+	    	    				    	           +'<a target="_blank" class="btn btn-danger btn-xs  pull-right"style="margin-right:5px" href="gestionePratiche.do?action=download_allegato&id_allegato='+lista_allegati[i].id+'"><i class="fa fa-arrow-down small"></i></a>'
+	    	    				    	           +'</div></div></li>';
+	    				    				}else{
+	    				    					html= html + '<li class="list-group-item"><div class="row"><div class="col-xs-10"><b>'+lista_allegati[i].nomeFile+'</b></div><div class="col-xs-2 pull-right">' 	           
+	    	    				                +'<a class="btn btn-danger btn-xs pull-right" onClick="eliminaAllegatoModal(\''+lista_allegati[i].id+'\')"><i class="fa fa-trash"></i></a>'
+	    	    				    	           +'<a class="btn btn-danger btn-xs  pull-right"style="margin-right:5px" href="gestionePratiche.do?action=download_allegato&id_allegato='+lista_allegati[i].id+'"><i class="fa fa-arrow-down small"></i></a>'
+	    	    				    	           +'</div></div></li>';
+	    				    				}	    				       			 
 	    				       		}
 	    				    		}else{
 	    				    			 html= html + '<li class="list-group-item"> Nessun file allegato alla pratica! </li>';

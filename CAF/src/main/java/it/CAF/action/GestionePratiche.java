@@ -381,8 +381,13 @@ public class GestionePratiche extends HttpServlet {
 				
 				AllegatoDTO allegato = GestionePraticheBO.getAllegato(Integer.parseInt(idAllegato), session);
 				
+				if(allegato.getNomeFile().endsWith("pdf") || allegato.getNomeFile().endsWith("PDF")) {
+					response.setContentType("application/pdf");
+				}else {
+					response.setContentType("application/octet-stream");
+					response.setHeader("Content-Disposition","attachment;filename="+ allegato.getNomeFile());
+				}
 				
-				response.setContentType("application/pdf");
 				
 				String path = Costanti.PATH_FOLDER+"Allegati\\"+allegato.getPratica().getId()+"\\"+allegato.getNomeFile();
 				
